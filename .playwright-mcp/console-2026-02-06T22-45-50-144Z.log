@@ -1,0 +1,27 @@
+[    2710ms] Error: Invariant: missing bootstrap script. This is a bug in Next.js
+    at getServerError (webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/nodeStackFrames.js:38:15)
+    at hydrate/< (webpack-internal:///./node_modules/next/dist/client/index.js:625:27)
+    at setTimeout handler*hydrate (webpack-internal:///./node_modules/next/dist/client/index.js:613:27)
+    at async*pageBootrap (webpack-internal:///./node_modules/next/dist/client/page-bootstrap.js:27:26)
+    at  (webpack-internal:///./node_modules/next/dist/client/next-dev.js:25:43)
+    at promise callback* (webpack-internal:///./node_modules/next/dist/client/next-dev.js:23:4)
+    at ./node_modules/next/dist/client/next-dev.js (http://localhost:3000/_next/static/chunks/main.js:820:1)
+    at options.factory (http://localhost:3000/_next/static/chunks/webpack.js:715:31)
+    at __webpack_require__ (http://localhost:3000/_next/static/chunks/webpack.js:37:33)
+    at __webpack_exec__ (http://localhost:3000/_next/static/chunks/main.js:1975:61)
+    at  (http://localhost:3000/_next/static/chunks/main.js:1976:53)
+    at webpackJsonpCallback (http://localhost:3000/_next/static/chunks/webpack.js:1387:46)
+    at  (http://localhost:3000/_next/static/chunks/main.js:9:61)
+[   22367ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3000/_next/webpack-hmr." {file: "http://localhost:3000/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3000/_next/static/chunks/main.js line 710 > eval:64
+[   23371ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3000/_next/webpack-hmr." {file: "http://localhost:3000/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3000/_next/static/chunks/main.js line 710 > eval:64
+[   24379ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3000/_next/webpack-hmr." {file: "http://localhost:3000/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3000/_next/static/chunks/main.js line 710 > eval:64
+[   25732ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3000/_next/webpack-hmr." {file: "http://localhost:3000/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3000/_next/static/chunks/main.js line 710 > eval:64
+[   28467ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:347
+[   42249ms] [WARNING] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. @ webpack-internal:///(app-pages-browser)/./node_modules/framer-motion/dist/es/utils/warn-once.mjs:8

@@ -1,0 +1,6 @@
+[   17695ms] [WARNING] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. @ webpack-internal:///(app-pages-browser)/./node_modules/framer-motion/dist/es/utils/warn-once.mjs:8
+[   26299ms] [ERROR] Failed to fetch RSC payload for http://localhost:3001/. Falling back to browser navigation. Error @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[   26673ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3001/_next/static/chunks/app/layout.js”." {file: "http://localhost:3001/" line: 1}] @ http://localhost:3001/:1
+[   26673ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3001/_next/static/chunks/main-app.js?v=1770417984227”." {file: "http://localhost:3001/" line: 1}] @ http://localhost:3001/:1
+[   26677ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3001/_next/static/chunks/app/page.js”." {file: "http://localhost:3001/" line: 1}] @ http://localhost:3001/:1
+[   26677ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3001/_next/static/chunks/app-pages-internals.js”." {file: "http://localhost:3001/" line: 1}] @ http://localhost:3001/:1
