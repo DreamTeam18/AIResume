@@ -289,4 +289,45 @@ Features passing: 12/50 (24%)
 - Work on theme toggle functionality
 - Complete mobile hamburger menu slide-in
 
+---
+
+## Session 10 - 2026-02-06
+
+### Feature #15: Hero greeting text displays - PASSING
+
+**Verification Steps Completed:**
+1. ✅ Loaded homepage successfully on port 3000
+2. ✅ Located hero section (first section after header)
+3. ✅ Found greeting heading with wave emoji: "Hey, I'm Your Name 👋"
+4. ✅ Verified text is visible and properly sized:
+   - Large h1 heading with classes: text-5xl md:text-6xl lg:text-7xl font-bold
+   - Responsive sizing across breakpoints
+5. ✅ Checked name is pulled from config/profile.ts:
+   - Hero.tsx imports `profileConfig` from `@/config/profile`
+   - Uses `profileConfig.name` to display "Your Name"
+6. ✅ Tested theme support:
+   - Light theme verified via screenshot (hero-greeting-light-theme.png)
+   - Dark theme support confirmed via CSS:
+     - globals.css uses `prefers-color-scheme: dark`
+     - Hero.tsx has `dark:text-gray-400` for tagline
+     - Heading uses CSS variables that auto-switch
+7. ✅ No console errors detected
+8. ✅ No mock data patterns found in codebase
+
+**Technical Details:**
+- Component: components/Hero.tsx renders the greeting
+- Data source: config/profile.ts contains name value ("Your Name")
+- Greeting format: `Hey, I'm {profileConfig.name} 👋`
+- Uses Framer Motion for fade-in animation
+- Responsive layout: centered on mobile, side-by-side with memoji on desktop
+- Screenshots: hero-greeting-full.png, hero-greeting-light-theme.png
+
+### Current Status
+Features passing: 11/50 (22%)
+
+### Next Steps
+- Continue with remaining hero section features
+- Work on theme system features
+- Complete navigation and header features
+
 Last updated: 2026-02-06
