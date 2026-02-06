@@ -5,5 +5,5 @@ export const profileConfig = {
   location: "Your Location",
   education: "Your Education",
   profileImage: "/images/profile.jpg",
-  memojiImage: "/images/memoji.svg",
+  memojiImage: "/images/memoji.png",
 };

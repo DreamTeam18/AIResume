@@ -59,14 +59,14 @@ export default function Hero() {
               }}
               whileHover={{ scale: 1.05, rotate: 2 }}
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-              className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96"
             >
               <Image
                 src={profileConfig.memojiImage}
                 alt="Animated memoji"
-                fill
+                width={384}
+                height={384}
                 priority
-                className="object-contain"
+                className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain"
                 sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
               />
             </motion.div>
