@@ -7,6 +7,15 @@ const nextConfig = {
   swcMinify: false,
   experimental: {
     forceSwcTransforms: false,
+    webpackBuildWorker: false,
+  },
+  webpack: (config, { isServer }) => {
+    // Force use of WASM SWC instead of native binary
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@next/swc': '@next/swc-wasm-nodejs',
+    };
+    return config;
   },
 };
 
