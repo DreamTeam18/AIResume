@@ -76,8 +76,6 @@ Features passing: 7/50 (14%)
 - Work on hover effects and animations
 - Complete remaining UI features
 
-Last updated: 2026-02-06
-
 ---
 
 ## Session 4 - 2026-02-06
@@ -109,5 +107,42 @@ Features passing: 7/50 (14%)
 - Continue with other Projects section features
 - Work on hover effects and animations
 - Complete remaining UI features
+
+---
+
+## Session 5 - 2026-02-06
+
+### Feature #21: Memoji image is optimized with Next.js Image - PASSING
+
+**Verification Steps Completed:**
+1. ✅ Inspected memoji element in DevTools via browser automation
+2. ✅ Verified element is `<img>` with srcset attribute
+3. ✅ Confirmed `/_next/image` URL in src: `http://localhost:3000/_next/image?url=%2Fimages%2Fmemoji.png&w=3840&q=75`
+4. ✅ Verified multiple sizes in srcset: 16 different sizes from 16w to 3840w
+5. ✅ Confirmed image has width="384" and height="384" attributes
+6. ✅ No layout shift when image loads (CLS) - explicit dimensions prevent shift
+7. ✅ Tested different viewport sizes:
+   - Mobile (375px): Loads 256w image appropriately
+   - Desktop (1280px): Loads larger image size
+
+**Implementation Changes:**
+- Converted memoji from SVG to PNG format for proper Next.js image optimization
+- Updated Hero component to use explicit width/height instead of `fill` prop
+- Added proper `sizes` attribute: "(max-width: 768px) 256px, (max-width: 1024px) 320px, 384px"
+- Updated config/profile.ts to reference memoji.png
+
+**Technical Details:**
+- SVG files are passed through unchanged by Next.js Image
+- PNG allows proper srcset generation with multiple optimized sizes
+- Browser automatically selects appropriate size based on viewport
+- Image is priority loaded (no lazy loading for hero content)
+
+### Current Status
+Features passing: 9/50 (18%)
+
+### Next Steps
+- Continue with remaining hero section features
+- Work on theme system features
+- Complete navigation and header features
 
 Last updated: 2026-02-06
