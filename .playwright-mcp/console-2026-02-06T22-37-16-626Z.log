@@ -1,0 +1,31 @@
+[    5832ms] [WARNING] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. @ webpack-internal:///(app-pages-browser)/./node_modules/framer-motion/dist/es/utils/warn-once.mjs:8
+[   47087ms] Error: Cannot find module './819.js'
+Require stack:
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/.next/server/webpack-runtime.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/.next/server/pages/_document.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/require.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/load-components.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/build/utils.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/lib/router-server.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/lib/start-server.js
+    at getServerError (webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/nodeStackFrames.js:38:15)
+    at hydrate/< (webpack-internal:///./node_modules/next/dist/client/index.js:625:27)
+    at setTimeout handler*hydrate (webpack-internal:///./node_modules/next/dist/client/index.js:613:27)
+    at async*pageBootrap (webpack-internal:///./node_modules/next/dist/client/page-bootstrap.js:27:26)
+    at  (webpack-internal:///./node_modules/next/dist/client/next-dev.js:25:43)
+    at promise callback* (webpack-internal:///./node_modules/next/dist/client/next-dev.js:23:4)
+    at ./node_modules/next/dist/client/next-dev.js (http://localhost:3000/_next/static/chunks/main.js:820:1)
+    at options.factory (http://localhost:3000/_next/static/chunks/webpack.js:715:31)
+    at __webpack_require__ (http://localhost:3000/_next/static/chunks/webpack.js:37:33)
+    at __webpack_exec__ (http://localhost:3000/_next/static/chunks/main.js:1975:61)
+    at  (http://localhost:3000/_next/static/chunks/main.js:1976:53)
+    at webpackJsonpCallback (http://localhost:3000/_next/static/chunks/webpack.js:1387:46)
+    at  (http://localhost:3000/_next/static/chunks/main.js:9:61)
+[   59929ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:349
+[   61454ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:349
+[   63170ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3000/_next/static/chunks/app-pages-internals.js”." {file: "http://localhost:3000/" line: 1}] @ http://localhost:3000/:1
+[   63170ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3000/_next/static/chunks/main-app.js?v=1770417498256”." {file: "http://localhost:3000/" line: 1}] @ http://localhost:3000/:1
+[   63172ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3000/_next/static/chunks/app/page.js”." {file: "http://localhost:3000/" line: 1}] @ http://localhost:3000/:1

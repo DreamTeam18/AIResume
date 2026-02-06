@@ -1,8 +1,21 @@
 'use client';
 
 import { profileConfig } from '@/config/profile';
+import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
+  // Smooth scroll handler for navigation links
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-foreground/10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,38 +35,46 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-8">
             <a
               href="#me"
+              onClick={(e) => handleSmoothScroll(e, 'me')}
               className="text-foreground/70 hover:text-foreground transition-colors duration-200 text-sm font-medium"
             >
               Me
             </a>
             <a
               href="#projects"
+              onClick={(e) => handleSmoothScroll(e, 'projects')}
               className="text-foreground/70 hover:text-foreground transition-colors duration-200 text-sm font-medium"
             >
               Projects
             </a>
             <a
               href="#skills"
+              onClick={(e) => handleSmoothScroll(e, 'skills')}
               className="text-foreground/70 hover:text-foreground transition-colors duration-200 text-sm font-medium"
             >
               Skills
             </a>
             <a
               href="#contact"
+              onClick={(e) => handleSmoothScroll(e, 'contact')}
               className="text-foreground/70 hover:text-foreground transition-colors duration-200 text-sm font-medium"
             >
               Contact
             </a>
           </nav>
 
-          {/* CTA Button - Right */}
+          {/* CTA Button and Theme Toggle - Right */}
           <div className="flex items-center space-x-4">
             <a
               href="#contact"
+              onClick={(e) => handleSmoothScroll(e, 'contact')}
               className="hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200"
             >
               Looking for talent?
             </a>
+
+            {/* Theme Toggle Button */}
+            <ThemeToggle />
 
             {/* Mobile Menu Button (placeholder for future feature) */}
             <button

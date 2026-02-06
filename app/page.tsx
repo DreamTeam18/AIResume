@@ -2,6 +2,7 @@ import Hero from '@/components/Hero';
 import Header from '@/components/Header';
 import { ProjectsSection } from '@/components/ProjectsSection';
 import { SkillsSection } from '@/components/SkillsSection';
+import { ContactSection } from '@/components/ContactSection';
 
 export default function Home() {
   return (
@@ -17,6 +18,9 @@ export default function Home() {
 
       {/* Skills Section */}
       <SkillsSection />
+
+      {/* Contact Section */}
+      <ContactSection />
     </main>
   );
 }

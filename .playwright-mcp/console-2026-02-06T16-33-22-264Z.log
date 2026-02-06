@@ -1,0 +1,3 @@
+[    3512ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3003/_next/static/chunks/main-app.js?v=1770395603249”." {file: "http://localhost:3003/" line: 1}] @ http://localhost:3003/:1
+[    3535ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3003/_next/static/chunks/app-pages-internals.js”." {file: "http://localhost:3003/" line: 1}] @ http://localhost:3003/:1
+[    3535ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3003/_next/static/chunks/app/page.js”." {file: "http://localhost:3003/" line: 1}] @ http://localhost:3003/:1
