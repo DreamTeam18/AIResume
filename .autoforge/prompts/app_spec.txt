@@ -1,0 +1,560 @@
+<project_specification>
+  <project_name>AI-Resume</project_name>
+
+  <overview>
+    AI-Resume is an exact visual clone of the modern portfolio website sarthak-potfolio.vercel.app. It features smooth animations, light/dark theme switching, and showcases developer projects and skills. Phase 1 focuses on pixel-perfect frontend replication; Phase 2 will add Google Gemini AI chat integration for an interactive memoji assistant.
+  </overview>
+
+  <technology_stack>
+    <frontend>
+      <framework>Next.js 14+ (App Router)</framework>
+      <language>TypeScript</language>
+      <styling>Tailwind CSS</styling>
+      <animations>Framer Motion</animations>
+      <icons>Lucide React</icons>
+      <fonts>Google Fonts (custom selection matching original)</fonts>
+    </frontend>
+    <backend>
+      <runtime>Node.js (Next.js serverless functions)</runtime>
+      <database>none - stateless application</database>
+      <ai>Google Gemini API (Phase 2 - free tier)</ai>
+    </backend>
+    <communication>
+      <api>REST API (/api/chat for Phase 2)</api>
+    </communication>
+  </technology_stack>
+
+  <prerequisites>
+    <environment_setup>
+      - Node.js 18+ installed
+      - npm or yarn package manager
+      - Git for version control
+      - Code editor (VS Code recommended)
+      - Vercel account for deployment (optional)
+      - Google Gemini API key (Phase 2 only)
+    </environment_setup>
+  </prerequisites>
+
+  <feature_count>50</feature_count>
+
+  <security_and_access_control>
+    <user_roles>
+      <role name="visitor">
+        <permissions>
+          - Can view all portfolio content
+          - Can interact with theme toggle
+          - Can navigate all sections
+          - Can click external links (GitHub, LinkedIn, etc.)
+          - Can use smooth scroll navigation
+        </permissions>
+        <protected_routes>
+          - None - fully public portfolio site
+        </protected_routes>
+      </role>
+    </user_roles>
+    <authentication>
+      <method>None - public portfolio</method>
+      <session_timeout>N/A</session_timeout>
+      <password_requirements>N/A</password_requirements>
+    </authentication>
+    <sensitive_operations>
+      - API rate limiting on /api/chat endpoint (Phase 2) to prevent abuse
+    </sensitive_operations>
+  </security_and_access_control>
+
+  <core_features>
+    <navigation_and_header>
+      - Logo/brand display in top-left
+      - Navigation menu with links: Me, Projects, Skills, Contact
+      - Smooth scroll to sections on nav click
+      - "Looking for talent?" CTA button
+      - Star/bookmark icon
+      - Sticky header on scroll
+      - Mobile hamburger menu
+      - Active section highlighting in nav
+    </navigation_and_header>
+
+    <hero_section>
+      - Large heading with greeting: "Hey, I'm [Name] 👋"
+      - Subtitle/tagline text
+      - Central animated memoji image (high-res, optimized)
+      - Fade-in animation on page load
+      - Responsive layout (stacked on mobile, side-by-side on desktop)
+      - Parallax or subtle motion effects on memoji
+      - Viewport-optimized sizing
+      - Next.js Image optimization
+    </hero_section>
+
+    <theme_system>
+      - Light/Dark mode toggle button
+      - Smooth CSS transitions between themes
+      - Theme preference persistence (localStorage)
+      - System preference detection on first visit
+      - Instant theme application (no flash)
+      - All components theme-aware
+    </theme_system>
+
+    <about_me_section>
+      - Section heading "About Me" or "Me"
+      - Bio paragraph/text content
+      - Profile photo or additional memoji
+      - Background information (education, location, etc.)
+      - Fade-in animation on scroll into view
+      - Responsive text sizing
+      - Visual separation/styling from other sections
+    </about_me_section>
+
+    <projects_section>
+      - Section heading "Projects"
+      - Project cards in responsive grid (2 columns desktop, 1 column mobile)
+      - LaughGPT project card: title, description, tech stack badges, GitHub link
+      - Airbnb project card: title, description, tech stack badges, GitHub link
+      - Hover effects on cards (lift, shadow, scale)
+      - Tech stack badges/pills with icons
+      - External link icons
+      - Card layout: image/icon, title, description, tech tags, link button
+      - Smooth animations on scroll into view
+      - Placeholder for future projects (scalable design)
+    </projects_section>
+
+    <skills_section>
+      - Section heading "Skills"
+      - Tech stack display in grid layout
+      - Skill categories: Backend (Java, Spring Boot), Frontend (React, TypeScript), Database (MySQL, PostgreSQL), Other (JWT, Stripe, Git, Docker)
+      - Icons for each technology
+      - Fade-in/stagger animations on scroll
+      - Responsive grid (4 columns desktop, 2-3 mobile)
+      - Hover effects on skill items
+    </skills_section>
+
+    <contact_section>
+      - Section heading "Contact"
+      - Social media links: GitHub, LinkedIn
+      - Email address or contact CTA
+      - Link icons with hover effects
+      - "Get in touch" messaging
+      - External links open in new tab
+      - Responsive layout
+    </contact_section>
+
+    <responsive_design>
+      - Mobile-first CSS approach
+      - Breakpoints: mobile (< 640px), tablet (640-1024px), desktop (> 1024px)
+      - Touch-friendly tap targets (min 44x44px)
+      - Hamburger menu on mobile with smooth slide-in animation
+      - Viewport meta tag with proper scaling
+      - Fluid typography (clamp or responsive font sizes)
+      - Responsive images with srcset
+      - Testing across devices (phone, tablet, desktop)
+    </responsive_design>
+
+    <animations_and_interactions>
+      - Smooth scroll behavior (CSS scroll-behavior or Framer Motion)
+      - Fade-in animations on section scroll
+      - Hover states on all interactive elements
+      - Loading animations for images
+      - Theme toggle animation
+      - Parallax effects on hero memoji
+      - Stagger animations for lists/grids
+      - Navigation active state transitions
+      - Button press/click feedback animations
+    </animations_and_interactions>
+
+    <performance_optimizations>
+      - Next.js Image component for optimized images
+      - Lazy loading for below-fold content
+      - Code splitting by route
+      - Font preloading
+      - Minimize CSS/JS bundle size
+      - Static generation where possible
+      - Fast page load (< 2s on 3G)
+    </performance_optimizations>
+
+    <phase_2_ai_chat_preparation>
+      - Chat modal component (initially hidden/disabled)
+      - Click handler on memoji to trigger chat (stubbed)
+      - Message input field component
+      - Message display component
+      - API route structure: /app/api/chat/route.ts (returns placeholder)
+      - Streaming response UI placeholder
+      - Chat history state management
+      - Session ID generation
+    </phase_2_ai_chat_preparation>
+  </core_features>
+
+  <database_schema>
+    <tables>
+      N/A - Stateless application. All content stored in configuration files.
+    </tables>
+  </database_schema>
+
+  <configuration_files>
+    <profile_config>
+      /config/profile.ts
+      - name: string
+      - tagline: string
+      - bio: string
+      - location: string
+      - education: string
+      - profileImage: string
+      - memojiImage: string
+    </profile_config>
+
+    <projects_config>
+      /config/projects.ts
+      - Array of project objects:
+        - id: string
+        - title: string
+        - description: string
+        - techStack: string[]
+        - githubUrl: string
+        - demoUrl?: string
+        - image?: string
+    </projects_config>
+
+    <skills_config>
+      /config/skills.ts
+      - Array of skill objects:
+        - id: string
+        - name: string
+        - category: 'backend' | 'frontend' | 'database' | 'other'
+        - icon: string (component name)
+    </skills_config>
+
+    <contact_config>
+      /config/contact.ts
+      - email: string
+      - github: string
+      - linkedin: string
+      - twitter?: string
+    </contact_config>
+  </configuration_files>
+
+  <api_endpoints_summary>
+    <phase_1>
+      - No API endpoints required (stateless frontend)
+    </phase_1>
+
+    <phase_2_future>
+      - POST /api/chat
+        - Request body: { id: string, messages: Message[] }
+        - Response: Streaming text/event-stream
+        - Calls Google Gemini API with system prompt
+        - Returns AI assistant responses
+    </phase_2_future>
+  </api_endpoints_summary>
+
+  <ui_layout>
+    <main_structure>
+      Single-page application with vertical scroll:
+      - Fixed header (sticky on scroll)
+      - Hero section (full viewport height)
+      - About section (auto height)
+      - Projects section (auto height)
+      - Skills section (auto height)
+      - Contact section (footer-style)
+
+      Layout container: max-width 1200px, centered, responsive padding
+    </main_structure>
+
+    <header_layout>
+      Flexbox: Logo left, Nav center/right, CTA button right
+      Mobile: Logo left, Hamburger right
+    </header_layout>
+
+    <section_layout>
+      Each section: padding-y (80-120px), centered content, max-width container
+      Consistent vertical rhythm and spacing
+    </section_layout>
+  </ui_layout>
+
+  <design_system>
+    <color_palette>
+      Light Mode:
+      - Background: White (#FFFFFF) or light gray (#F9FAFB)
+      - Text: Dark gray/black (#111827)
+      - Accent: Blue or custom brand color
+      - Card background: White with subtle shadow
+
+      Dark Mode:
+      - Background: Dark gray/black (#111827 or #0F172A)
+      - Text: White/light gray (#F9FAFB)
+      - Accent: Bright blue or custom brand color
+      - Card background: Slightly lighter dark (#1F2937)
+
+      Match original site's exact colors via design tokens
+    </color_palette>
+
+    <typography>
+      - Primary font: Custom Google Font (sans-serif, modern)
+      - Fallback: System font stack (Arial, sans-serif)
+      - Heading sizes: h1 (3xl-6xl), h2 (2xl-4xl), h3 (xl-2xl)
+      - Body: base (16px), responsive scaling
+      - Line height: 1.5-1.6 for readability
+      - Font weights: 400 (regular), 600 (semibold), 700 (bold)
+    </typography>
+
+    <spacing>
+      - Tailwind spacing scale (4px base unit)
+      - Section padding: py-20 to py-32
+      - Container padding: px-4 to px-8
+      - Component gaps: gap-4, gap-6, gap-8
+    </spacing>
+
+    <shadows_and_effects>
+      - Card shadows: subtle in light mode, minimal in dark mode
+      - Hover elevations: increase shadow on hover
+      - Border radius: rounded-lg (8px), rounded-xl (12px)
+      - Transitions: duration-200 to duration-300, ease-in-out
+    </shadows_and_effects>
+  </design_system>
+
+  <implementation_steps>
+    <step number="1">
+      <title>Project Setup and Foundation</title>
+      <tasks>
+        - Initialize Next.js 14+ project with TypeScript and Tailwind CSS
+        - Configure Tailwind with custom theme colors and fonts
+        - Install dependencies: Framer Motion, Lucide React
+        - Set up project structure: /app, /components, /config, /lib
+        - Configure TypeScript strict mode
+        - Set up ESLint and Prettier
+        - Create base layout component with metadata
+        - Add global styles and CSS variables for theming
+      </tasks>
+    </step>
+
+    <step number="2">
+      <title>Theme System Implementation</title>
+      <tasks>
+        - Create ThemeProvider context with light/dark state
+        - Implement theme toggle button component
+        - Add localStorage persistence logic
+        - Detect system preference on first visit
+        - Set up CSS custom properties for theme colors
+        - Implement smooth transition animations
+        - Test theme switching across all components
+        - Prevent flash of unstyled content (FOUC)
+      </tasks>
+    </step>
+
+    <step number="3">
+      <title>Header and Navigation</title>
+      <tasks>
+        - Create Header component with logo and nav links
+        - Implement smooth scroll to sections
+        - Add mobile hamburger menu with slide-in animation
+        - Create "Looking for talent?" CTA button
+        - Implement sticky header on scroll
+        - Add active section highlighting
+        - Style with theme awareness
+        - Test responsive behavior on all screen sizes
+      </tasks>
+    </step>
+
+    <step number="4">
+      <title>Hero Section</title>
+      <tasks>
+        - Create Hero component with greeting text
+        - Add animated memoji image using Next.js Image
+        - Implement fade-in animations with Framer Motion
+        - Add parallax or subtle motion effects
+        - Create responsive layout (stacked mobile, side-by-side desktop)
+        - Optimize image loading and sizing
+        - Test animations and performance
+        - Match exact styling from original site
+      </tasks>
+    </step>
+
+    <step number="5">
+      <title>About/Me Section</title>
+      <tasks>
+        - Create About component with bio content
+        - Add profile photo or additional memoji
+        - Implement scroll-triggered fade-in animations
+        - Create responsive text layout
+        - Add education and background information
+        - Style with proper spacing and typography
+        - Test readability on all devices
+      </tasks>
+    </step>
+
+    <step number="6">
+      <title>Projects Section</title>
+      <tasks>
+        - Create ProjectCard component
+        - Implement responsive grid layout (2 cols desktop, 1 mobile)
+        - Add LaughGPT project with details and tech stack
+        - Add Airbnb project with details and tech stack
+        - Create tech stack badge components with icons
+        - Implement hover effects (lift, shadow, scale)
+        - Add GitHub link buttons
+        - Implement scroll-triggered animations
+        - Test card interactions and responsive layout
+      </tasks>
+    </step>
+
+    <step number="7">
+      <title>Skills Section</title>
+      <tasks>
+        - Create Skills component with grid layout
+        - Add skill items for: Java, Spring Boot, React, TypeScript, MySQL, PostgreSQL, JWT, Stripe, Git, Docker
+        - Implement skill icons using Lucide React
+        - Create skill categories: Backend, Frontend, Database, Other
+        - Add stagger animations on scroll into view
+        - Implement hover effects on skill items
+        - Test responsive grid (4 cols desktop, 2-3 mobile)
+        - Match visual style from original
+      </tasks>
+    </step>
+
+    <step number="8">
+      <title>Contact Section</title>
+      <tasks>
+        - Create Contact component with heading
+        - Add social media links: GitHub, LinkedIn
+        - Add email contact or CTA
+        - Implement link icons with hover effects
+        - Style as footer-like section
+        - Ensure links open in new tab
+        - Test responsive layout
+        - Add "Get in touch" messaging
+      </tasks>
+    </step>
+
+    <step number="9">
+      <title>Configuration Files and Content</title>
+      <tasks>
+        - Create /config/profile.ts with personal data
+        - Create /config/projects.ts with LaughGPT and Airbnb details
+        - Create /config/skills.ts with tech stack array
+        - Create /config/contact.ts with social links
+        - Populate all config files with actual content
+        - Import and use config data in components
+        - Test content rendering across all sections
+      </tasks>
+    </step>
+
+    <step number="10">
+      <title>Animations and Interactions Polish</title>
+      <tasks>
+        - Implement scroll-triggered animations for all sections
+        - Add smooth scroll behavior
+        - Create hover states for all interactive elements
+        - Add button press/click feedback
+        - Implement loading animations for images
+        - Add parallax effects on hero memoji
+        - Test animation performance (60fps target)
+        - Fine-tune timing and easing curves
+      </tasks>
+    </step>
+
+    <step number="11">
+      <title>Responsive Design and Mobile Optimization</title>
+      <tasks>
+        - Test on mobile devices (320px to 480px)
+        - Test on tablets (768px to 1024px)
+        - Test on desktop (1280px+)
+        - Adjust breakpoints and spacing
+        - Ensure touch targets are 44x44px minimum
+        - Test hamburger menu functionality
+        - Optimize images for different screen sizes
+        - Test performance on mobile networks
+      </tasks>
+    </step>
+
+    <step number="12">
+      <title>Phase 2 Preparation (AI Chat Structure)</title>
+      <tasks>
+        - Create ChatModal component (initially hidden)
+        - Add click handler on memoji (stubbed)
+        - Create message input and display components
+        - Set up /app/api/chat/route.ts with placeholder response
+        - Implement chat state management
+        - Add session ID generation
+        - Create streaming response UI structure
+        - Test modal open/close functionality
+        - Leave feature disabled for Phase 1 delivery
+      </tasks>
+    </step>
+
+    <step number="13">
+      <title>Performance Optimization</title>
+      <tasks>
+        - Optimize all images with Next.js Image
+        - Implement lazy loading for below-fold content
+        - Minimize CSS/JS bundle size
+        - Add font preloading
+        - Test Core Web Vitals (LCP, FID, CLS)
+        - Optimize for Lighthouse score (90+)
+        - Test load time on 3G network
+        - Add loading states where needed
+      </tasks>
+    </step>
+
+    <step number="14">
+      <title>Final Polish and Deployment</title>
+      <tasks>
+        - Cross-browser testing (Chrome, Firefox, Safari, Edge)
+        - Accessibility audit (keyboard navigation, ARIA labels, color contrast)
+        - Add meta tags for SEO and social sharing
+        - Add favicon and app icons
+        - Test theme persistence across sessions
+        - Fix any visual inconsistencies with original
+        - Deploy to Vercel
+        - Test production build
+        - Document configuration process for future updates
+      </tasks>
+    </step>
+  </implementation_steps>
+
+  <success_criteria>
+    <functionality>
+      - All navigation links work and smooth scroll to correct sections
+      - Theme toggle switches between light/dark modes smoothly
+      - Theme preference persists across page refreshes
+      - All external links (GitHub, LinkedIn) open in new tabs
+      - Mobile hamburger menu opens/closes correctly
+      - All hover effects work on desktop
+      - All touch interactions work on mobile
+      - Page loads in under 2 seconds on 3G
+    </functionality>
+
+    <user_experience>
+      - Layout is pixel-perfect match to original site
+      - All animations are smooth (60fps, no jank)
+      - Responsive design works flawlessly on all screen sizes
+      - Touch targets are appropriately sized for mobile
+      - Text is readable in both light and dark modes
+      - No layout shift during page load (CLS < 0.1)
+      - Navigation is intuitive and accessible
+    </user_experience>
+
+    <technical_quality>
+      - TypeScript with no type errors
+      - Clean component architecture
+      - Reusable components where appropriate
+      - No console errors or warnings
+      - Lighthouse score 90+ (Performance, Accessibility, Best Practices, SEO)
+      - Code follows Next.js and React best practices
+      - Configuration files are well-structured and easy to update
+    </technical_quality>
+
+    <design_polish>
+      - Colors match original site exactly in both themes
+      - Typography matches original (font, sizing, spacing)
+      - Spacing and layout rhythm is consistent
+      - Shadows and effects match original
+      - All icons are visually consistent
+      - Memoji image is high-quality and properly sized
+      - Visual hierarchy guides user attention effectively
+    </design_polish>
+
+    <phase_2_readiness>
+      - Chat modal component exists and is structurally complete
+      - API route structure is in place
+      - Click handler on memoji is ready to enable chat
+      - No visible AI features in Phase 1 (clean handoff)
+    </phase_2_readiness>
+  </success_criteria>
+</project_specification>
