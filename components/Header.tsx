@@ -195,6 +195,95 @@ export default function Header() {
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu Panel - Slides in from right */}
+      <div
+        id="mobile-menu"
+        className={`fixed top-0 right-0 h-full w-64 bg-background border-l border-foreground/10 shadow-2xl md:hidden transform transition-transform duration-300 ease-in-out z-50 ${
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex flex-col h-full">
+          {/* Close Button */}
+          <div className="flex justify-end p-4 border-b border-foreground/10">
+            <button
+              onClick={toggleMobileMenu}
+              className="p-2 text-foreground/70 hover:text-foreground transition-colors duration-200"
+              aria-label="Close menu"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="flex flex-col space-y-1 p-4">
+            <a
+              href="#me"
+              onClick={(e) => handleSmoothScroll(e, 'me')}
+              className={`px-4 py-3 text-base font-medium rounded-lg transition-colors duration-200 ${
+                activeSection === 'me'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-foreground/70 hover:text-foreground hover:bg-foreground/5'
+              }`}
+            >
+              Me
+            </a>
+            <a
+              href="#projects"
+              onClick={(e) => handleSmoothScroll(e, 'projects')}
+              className={`px-4 py-3 text-base font-medium rounded-lg transition-colors duration-200 ${
+                activeSection === 'projects'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-foreground/70 hover:text-foreground hover:bg-foreground/5'
+              }`}
+            >
+              Projects
+            </a>
+            <a
+              href="#skills"
+              onClick={(e) => handleSmoothScroll(e, 'skills')}
+              className={`px-4 py-3 text-base font-medium rounded-lg transition-colors duration-200 ${
+                activeSection === 'skills'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-foreground/70 hover:text-foreground hover:bg-foreground/5'
+              }`}
+            >
+              Skills
+            </a>
+            <a
+              href="#contact"
+              onClick={(e) => handleSmoothScroll(e, 'contact')}
+              className={`px-4 py-3 text-base font-medium rounded-lg transition-colors duration-200 ${
+                activeSection === 'contact'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-foreground/70 hover:text-foreground hover:bg-foreground/5'
+              }`}
+            >
+              Contact
+            </a>
+          </nav>
+
+          {/* CTA Button in Mobile Menu */}
+          <div className="px-4 mt-auto mb-4">
+            <a
+              href="#contact"
+              onClick={(e) => handleSmoothScroll(e, 'contact')}
+              className="block w-full text-center px-4 py-3 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200"
+            >
+              Looking for talent?
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Overlay - Darkens background when mobile menu is open */}
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 md:hidden z-40 transition-opacity duration-300"
+          onClick={toggleMobileMenu}
+          aria-hidden="true"
+        />
+      )}
     </header>
   );
 }
