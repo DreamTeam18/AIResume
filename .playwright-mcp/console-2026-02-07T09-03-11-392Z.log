@@ -1,1 +1,4 @@
 [   10672ms] [WARNING] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. @ webpack-internal:///(app-pages-browser)/./node_modules/framer-motion/dist/es/utils/warn-once.mjs:8
+[  126095ms] uncaught exception: Object
+
+[  130942ms] [WARNING] [JavaScript Warning: "The resource at “http://localhost:3001/_next/static/css/app/layout.css?v=1770455112307” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "http://localhost:3001/" line: 0}] @ http://localhost:3001/:0

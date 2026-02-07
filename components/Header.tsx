@@ -16,14 +16,20 @@ export default function Header() {
       let currentSection = 'me';
       const scrollPosition = window.scrollY + window.innerHeight / 3; // Check at 1/3 from top
 
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const { top } = element.getBoundingClientRect();
-          const absoluteTop = top + window.scrollY;
+      // Special case: if we're near the bottom of the page, activate the last section
+      const isNearBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 50;
+      if (isNearBottom) {
+        currentSection = sections[sections.length - 1];
+      } else {
+        for (const sectionId of sections) {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            const { top } = element.getBoundingClientRect();
+            const absoluteTop = top + window.scrollY;
 
-          if (scrollPosition >= absoluteTop) {
-            currentSection = sectionId;
+            if (scrollPosition >= absoluteTop) {
+              currentSection = sectionId;
+            }
           }
         }
       }
