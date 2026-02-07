@@ -24,7 +24,7 @@ export default function Hero() {
 
   return (
     <section
-      id="me"
+      id="hero"
       ref={sectionRef}
       className="min-h-screen flex items-center justify-center px-4 py-20"
     >
