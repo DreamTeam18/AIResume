@@ -9,33 +9,34 @@ export default function Header() {
 
   // Track which section is currently visible
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '-20% 0px -70% 0px', // Trigger when section is in middle third of viewport
-      threshold: 0,
-    };
-
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    // Observe all sections
     const sections = ['me', 'projects', 'skills', 'contact'];
-    sections.forEach((sectionId) => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        observer.observe(element);
+
+    const updateActiveSection = () => {
+      // Find which section is currently most visible
+      let currentSection = 'me';
+      const scrollPosition = window.scrollY + window.innerHeight / 3; // Check at 1/3 from top
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { top } = element.getBoundingClientRect();
+          const absoluteTop = top + window.scrollY;
+
+          if (scrollPosition >= absoluteTop) {
+            currentSection = sectionId;
+          }
+        }
       }
-    });
+
+      setActiveSection(currentSection);
+    };
+
+    // Update on mount and scroll
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection);
 
     return () => {
-      observer.disconnect();
+      window.removeEventListener('scroll', updateActiveSection);
     };
   }, []);
 
