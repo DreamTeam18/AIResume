@@ -4,7 +4,6 @@ const nextConfig = {
     domains: [],
     formats: ['image/avif', 'image/webp'],
   },
-  swcMinify: false,
 };
 
 module.exports = nextConfig;
