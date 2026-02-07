@@ -1,0 +1,131 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e5]:
+      - link "Your." [ref=e7] [cursor=pointer]:
+        - /url: "#"
+      - navigation [ref=e8]:
+        - link "Me" [ref=e9] [cursor=pointer]:
+          - /url: "#me"
+        - link "Projects" [ref=e10] [cursor=pointer]:
+          - /url: "#projects"
+        - link "Skills" [ref=e11] [cursor=pointer]:
+          - /url: "#skills"
+        - link "Contact" [ref=e12] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e13]:
+        - link "Looking for talent?" [ref=e14] [cursor=pointer]:
+          - /url: "#contact"
+        - button "Switch to dark mode" [ref=e15] [cursor=pointer]:
+          - img [ref=e16]
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - heading "Hey, I'm Your Name 👋" [level=1] [ref=e22]
+        - paragraph [ref=e23]: Full Stack Developer | Building Amazing Web Experiences
+      - img "Animated memoji" [ref=e26]
+    - generic [ref=e29]:
+      - heading "About Me" [level=2] [ref=e30]
+      - paragraph [ref=e31]: I'm a passionate developer who loves creating beautiful and functional web applications. With expertise in modern technologies, I build solutions that make a difference.
+      - generic [ref=e32]:
+        - paragraph [ref=e33]:
+          - strong [ref=e34]: "Location:"
+          - text: Your Location
+        - paragraph [ref=e35]:
+          - strong [ref=e36]: "Education:"
+          - text: Your Education
+    - generic [ref=e38]:
+      - heading "Projects" [level=2] [ref=e39]
+      - paragraph [ref=e40]: Here are some of my recent projects showcasing my skills and experience
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - img "LaughGPT" [ref=e44]
+          - generic [ref=e45]:
+            - heading "LaughGPT" [level=3] [ref=e46]
+            - paragraph [ref=e47]: An AI-powered comedy generation application that creates jokes and humorous content using advanced language models.
+            - generic [ref=e48]:
+              - generic [ref=e49]: React
+              - generic [ref=e50]: TypeScript
+              - generic [ref=e51]: OpenAI
+              - generic [ref=e52]: Tailwind CSS
+            - link "GitHub" [ref=e54] [cursor=pointer]:
+              - /url: https://github.com/yourusername/laughgpt
+              - img [ref=e55]
+              - generic [ref=e58]: GitHub
+        - generic [ref=e59]:
+          - img "Airbnb Clone" [ref=e61]
+          - generic [ref=e62]:
+            - heading "Airbnb Clone" [level=3] [ref=e63]
+            - paragraph [ref=e64]: A full-stack vacation rental platform featuring property listings, booking system, and user authentication.
+            - generic [ref=e65]:
+              - generic [ref=e66]: Next.js
+              - generic [ref=e67]: MongoDB
+              - generic [ref=e68]: Prisma
+              - generic [ref=e69]: NextAuth
+            - link "GitHub" [ref=e71] [cursor=pointer]:
+              - /url: https://github.com/yourusername/airbnb-clone
+              - img [ref=e72]
+              - generic [ref=e75]: GitHub
+    - generic [ref=e77]:
+      - heading "Skills" [level=2] [ref=e78]
+      - paragraph [ref=e79]: Technologies and tools I work with
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - img [ref=e83]
+          - generic [ref=e87]: Java
+        - generic [ref=e88]:
+          - img [ref=e90]
+          - generic [ref=e95]: Spring Boot
+        - generic [ref=e96]:
+          - img [ref=e98]
+          - generic [ref=e102]: React
+        - generic [ref=e103]:
+          - img [ref=e105]
+          - generic [ref=e110]: TypeScript
+        - generic [ref=e111]:
+          - img [ref=e113]
+          - generic [ref=e117]: MySQL
+        - generic [ref=e118]:
+          - img [ref=e120]
+          - generic [ref=e124]: PostgreSQL
+        - generic [ref=e125]:
+          - img [ref=e127]
+          - generic [ref=e131]: JWT
+        - generic [ref=e132]:
+          - img [ref=e134]
+          - generic [ref=e137]: Stripe
+        - generic [ref=e138]:
+          - img [ref=e140]
+          - generic [ref=e145]: Git
+        - generic [ref=e146]:
+          - img [ref=e148]
+          - generic [ref=e154]: Docker
+      - generic [ref=e155]:
+        - generic [ref=e156]:
+          - heading "Backend" [level=3] [ref=e157]
+          - paragraph [ref=e158]: 2 skills
+        - generic [ref=e159]:
+          - heading "Frontend" [level=3] [ref=e160]
+          - paragraph [ref=e161]: 2 skills
+        - generic [ref=e162]:
+          - heading "Database" [level=3] [ref=e163]
+          - paragraph [ref=e164]: 2 skills
+        - generic [ref=e165]:
+          - heading "Other" [level=3] [ref=e166]
+          - paragraph [ref=e167]: 4 skills
+    - generic [ref=e169]:
+      - heading "Contact" [level=2] [ref=e170]
+      - paragraph [ref=e171]: Get in touch - I'd love to hear from you!
+      - generic [ref=e172]:
+        - link "Email" [ref=e173] [cursor=pointer]:
+          - /url: mailto:your.email@example.com
+          - img [ref=e174]
+          - generic [ref=e177]: Email
+        - link "GitHub" [ref=e178] [cursor=pointer]:
+          - /url: https://github.com/yourusername
+          - img [ref=e179]
+          - generic [ref=e182]: GitHub
+        - link "LinkedIn" [ref=e183] [cursor=pointer]:
+          - /url: https://linkedin.com/in/yourusername
+          - img [ref=e184]
+          - generic [ref=e188]: LinkedIn
+      - paragraph [ref=e190]: © 2026 your.email. All rights reserved.
+  - alert [ref=e191]
