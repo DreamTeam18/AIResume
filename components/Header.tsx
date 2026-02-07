@@ -3,10 +3,11 @@
 import { useState, useEffect } from 'react';
 import { profileConfig } from '@/config/profile';
 import ThemeToggle from './ThemeToggle';
-import { Star } from 'lucide-react';
+import { Star, X } from 'lucide-react';
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState<string>('me');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Track which section is currently visible
   useEffect(() => {
@@ -57,7 +58,37 @@ export default function Header() {
         block: 'start',
       });
     }
+    // Close mobile menu after navigation
+    setIsMobileMenuOpen(false);
   };
+
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      const mobileMenu = document.getElementById('mobile-menu');
+      const hamburgerButton = document.getElementById('hamburger-button');
+
+      if (isMobileMenuOpen && mobileMenu && hamburgerButton) {
+        if (!mobileMenu.contains(target) && !hamburgerButton.contains(target)) {
+          setIsMobileMenuOpen(false);
+        }
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-foreground/10">
@@ -143,10 +174,12 @@ export default function Header() {
             {/* Theme Toggle Button */}
             <ThemeToggle />
 
-            {/* Mobile Menu Button (placeholder for future feature) */}
+            {/* Mobile Menu Button */}
             <button
+              id="hamburger-button"
+              onClick={toggleMobileMenu}
               className="md:hidden p-2 text-foreground/70 hover:text-foreground transition-colors duration-200"
-              aria-label="Open menu"
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
