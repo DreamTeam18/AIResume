@@ -1,14 +1,11 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 
 export function FluidBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
+  const initCanvas = useCallback((canvas: HTMLCanvasElement) => {
     const gl = canvas.getContext('webgl', {
       alpha: true,
       premultipliedAlpha: false
@@ -16,10 +13,10 @@ export function FluidBackground() {
 
     if (!gl) {
       console.error('WebGL not supported');
-      return;
+      return null;
     }
 
-    // Vertex shader - full screen quad
+    // Vertex shader
     const vertexShaderSource = `
       attribute vec2 position;
       void main() {
@@ -27,7 +24,7 @@ export function FluidBackground() {
       }
     `;
 
-    // Fragment shader - colorful fluid effect
+    // Fragment shader
     const fragmentShaderSource = `
       precision highp float;
       uniform float time;
@@ -36,16 +33,11 @@ export function FluidBackground() {
 
       void main() {
         vec2 uv = gl_FragCoord.xy / resolution;
-        vec2 center = vec2(0.5);
-
-        // Distance from mouse
         float dist = distance(uv, mouse);
 
-        // Create flowing wave pattern
         float wave1 = sin(dist * 10.0 - time * 2.0) * 0.5 + 0.5;
         float wave2 = cos(dist * 8.0 + time * 1.5) * 0.5 + 0.5;
 
-        // Rainbow colors that flow over time
         vec3 color1 = vec3(
           sin(time * 0.5 + uv.x * 5.0) * 0.5 + 0.5,
           sin(time * 0.6 + uv.y * 5.0 + 2.0) * 0.5 + 0.5,
@@ -58,160 +50,125 @@ export function FluidBackground() {
           cos(time * 0.5 + dist * 6.0 + 1.0) * 0.5 + 0.5
         );
 
-        // Blend colors with waves
-        vec3 finalColor = mix(color1, color2, wave1);
-        finalColor *= wave2;
+        vec3 finalColor = mix(color1, color2, wave1) * wave2;
+        finalColor += smoothstep(0.5, 0.0, dist) * 0.3;
 
-        // Add mouse influence - brighten near mouse
-        float mouseInfluence = smoothstep(0.5, 0.0, dist);
-        finalColor += mouseInfluence * 0.3;
-
-        // Subtle transparency for layering
-        float alpha = 0.6;
-
-        gl_FragColor = vec4(finalColor, alpha);
+        gl_FragColor = vec4(finalColor, 0.6);
       }
     `;
 
-    // Compile shader
-    const compileShader = (type: number, source: string): WebGLShader | null => {
+    const compileShader = (type: number, source: string) => {
       const shader = gl.createShader(type);
       if (!shader) return null;
-
       gl.shaderSource(shader, source);
       gl.compileShader(shader);
-
       if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-        console.error('Shader compile error:', gl.getShaderInfoLog(shader));
-        gl.deleteShader(shader);
+        console.error('Shader error:', gl.getShaderInfoLog(shader));
         return null;
       }
-
       return shader;
     };
 
-    // Create shaders
-    const vertexShader = compileShader(gl.VERTEX_SHADER, vertexShaderSource);
-    const fragmentShader = compileShader(gl.FRAGMENT_SHADER, fragmentShaderSource);
+    const vs = compileShader(gl.VERTEX_SHADER, vertexShaderSource);
+    const fs = compileShader(gl.FRAGMENT_SHADER, fragmentShaderSource);
+    if (!vs || !fs) return null;
 
-    if (!vertexShader || !fragmentShader) {
-      console.error('Failed to compile shaders');
-      return;
-    }
-
-    // Create and link program
     const program = gl.createProgram();
-    if (!program) {
-      console.error('Failed to create program');
-      return;
-    }
+    if (!program) return null;
 
-    gl.attachShader(program, vertexShader);
-    gl.attachShader(program, fragmentShader);
+    gl.attachShader(program, vs);
+    gl.attachShader(program, fs);
     gl.linkProgram(program);
 
     if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-      console.error('Program link error:', gl.getProgramInfoLog(program));
-      return;
+      console.error('Program link error');
+      return null;
     }
 
     gl.useProgram(program);
 
-    // Create full-screen quad buffer
     const buffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-    const vertices = new Float32Array([
-      -1, -1,  // bottom left
-       1, -1,  // bottom right
-      -1,  1,  // top left
-       1,  1   // top right
-    ]);
-    gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
 
-    // Set up position attribute
-    const positionLocation = gl.getAttribLocation(program, 'position');
-    gl.enableVertexAttribArray(positionLocation);
-    gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+    const posLoc = gl.getAttribLocation(program, 'position');
+    gl.enableVertexAttribArray(posLoc);
+    gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
 
-    // Get uniform locations
-    const timeLocation = gl.getUniformLocation(program, 'time');
-    const resolutionLocation = gl.getUniformLocation(program, 'resolution');
-    const mouseLocation = gl.getUniformLocation(program, 'mouse');
-
-    // Mouse tracking
-    let mouseX = 0.5;
-    let mouseY = 0.5;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX = e.clientX / window.innerWidth;
-      mouseY = 1.0 - (e.clientY / window.innerHeight); // Flip Y for WebGL coordinates
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    // Resize handler
-    const resizeCanvas = () => {
-      const dpr = window.devicePixelRatio || 1;
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      gl.viewport(0, 0, canvas.width, canvas.height);
-    };
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    // Enable blending for transparency
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 
-    // Animation loop
-    const startTime = Date.now();
-    let animationId: number;
+    return {
+      gl,
+      program,
+      timeLoc: gl.getUniformLocation(program, 'time'),
+      resLoc: gl.getUniformLocation(program, 'resolution'),
+      mouseLoc: gl.getUniformLocation(program, 'mouse')
+    };
+  }, []);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    // Force canvas size immediately
+    canvas.width = window.innerWidth * (window.devicePixelRatio || 1);
+    canvas.height = window.innerHeight * (window.devicePixelRatio || 1);
+
+    const ctx = initCanvas(canvas);
+    if (!ctx) return;
+
+    const { gl, timeLoc, resLoc, mouseLoc } = ctx;
+
+    let mouseX = 0.5, mouseY = 0.5;
+    const handleMove = (e: MouseEvent) => {
+      mouseX = e.clientX / window.innerWidth;
+      mouseY = 1 - e.clientY / window.innerHeight;
+    };
+
+    const handleResize = () => {
+      canvas.width = window.innerWidth * (window.devicePixelRatio || 1);
+      canvas.height = window.innerHeight * (window.devicePixelRatio || 1);
+      gl.viewport(0, 0, canvas.width, canvas.height);
+    };
+
+    window.addEventListener('mousemove', handleMove);
+    window.addEventListener('resize', handleResize);
+
+    const start = Date.now();
+    let animId: number;
 
     const render = () => {
-      const time = (Date.now() - startTime) / 1000;
-
-      // Clear with transparent black
+      const time = (Date.now() - start) / 1000;
       gl.clearColor(0, 0, 0, 0);
       gl.clear(gl.COLOR_BUFFER_BIT);
-
-      // Update uniforms
-      gl.uniform1f(timeLocation, time);
-      gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
-      gl.uniform2f(mouseLocation, mouseX, mouseY);
-
-      // Draw
+      gl.uniform1f(timeLoc, time);
+      gl.uniform2f(resLoc, canvas.width, canvas.height);
+      gl.uniform2f(mouseLoc, mouseX, mouseY);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-
-      animationId = requestAnimationFrame(render);
+      animId = requestAnimationFrame(render);
     };
 
     render();
 
-    // Cleanup
     return () => {
-      cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', resizeCanvas);
-      window.removeEventListener('mousemove', handleMouseMove);
-      gl.deleteProgram(program);
-      gl.deleteShader(vertexShader);
-      gl.deleteShader(fragmentShader);
-      gl.deleteBuffer(buffer);
+      cancelAnimationFrame(animId);
+      window.removeEventListener('mousemove', handleMove);
+      window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [initCanvas]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 w-full h-full"
       style={{
-        pointerEvents: 'none',
-        zIndex: -10,
         position: 'fixed',
         top: 0,
         left: 0,
         width: '100%',
-        height: '100%'
+        height: '100%',
+        zIndex: -10,
+        pointerEvents: 'none'
       }}
     />
   );

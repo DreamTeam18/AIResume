@@ -14,6 +14,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                } else if (savedTheme === 'light') {
+                  document.documentElement.classList.remove('dark');
+                } else {
+                  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  if (systemTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                  }
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>

@@ -1,0 +1,4 @@
+[     336ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3000/_next/static/chunks/main.js”." {file: "http://localhost:3000/" line: 1}] @ http://localhost:3000/:1
+[     340ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3000/_next/static/chunks/pages/_app.js”." {file: "http://localhost:3000/" line: 1}] @ http://localhost:3000/:1
+[     374ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3000/_next/static/chunks/react-refresh.js”." {file: "http://localhost:3000/" line: 1}] @ http://localhost:3000/:1
+[     378ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3000/_next/static/chunks/pages/_error.js”." {file: "http://localhost:3000/" line: 1}] @ http://localhost:3000/:1

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { profileConfig } from '@/config/profile';
 import ThemeToggle from './ThemeToggle';
+import { Star } from 'lucide-react';
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState<string>('me');
@@ -121,7 +122,7 @@ export default function Header() {
             </a>
           </nav>
 
-          {/* CTA Button and Theme Toggle - Right */}
+          {/* CTA Button, Star Icon, and Theme Toggle - Right */}
           <div className="flex items-center space-x-4">
             <a
               href="#contact"
@@ -130,6 +131,14 @@ export default function Header() {
             >
               Looking for talent?
             </a>
+
+            {/* Star/Bookmark Icon */}
+            <button
+              className="p-2 text-foreground/70 hover:text-yellow-500 transition-colors duration-200"
+              aria-label="Bookmark this page"
+            >
+              <Star className="w-5 h-5" />
+            </button>
 
             {/* Theme Toggle Button */}
             <ThemeToggle />

@@ -8,7 +8,7 @@ import { FluidBackground } from '@/components/FluidBackground';
 
 export default function Home() {
   return (
-    <main className="min-h-screen text-foreground relative bg-transparent">
+    <main className="min-h-screen bg-background text-foreground">
       {/* Fluid Background */}
       <FluidBackground />
 
