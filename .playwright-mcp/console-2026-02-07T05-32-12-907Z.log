@@ -1,0 +1,40 @@
+[     502ms] Error: Cannot find module './819.js'
+Require stack:
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/.next/server/webpack-runtime.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/.next/server/pages/_document.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/require.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/load-components.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/build/utils.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/lib/router-server.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/lib/start-server.js
+    at getServerError (webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/nodeStackFrames.js:38:15)
+    at hydrate/< (webpack-internal:///./node_modules/next/dist/client/index.js:625:27)
+    at setTimeout handler*hydrate (webpack-internal:///./node_modules/next/dist/client/index.js:613:27)
+    at async*pageBootrap (webpack-internal:///./node_modules/next/dist/client/page-bootstrap.js:27:26)
+    at  (webpack-internal:///./node_modules/next/dist/client/next-dev.js:25:43)
+    at promise callback* (webpack-internal:///./node_modules/next/dist/client/next-dev.js:23:4)
+    at ./node_modules/next/dist/client/next-dev.js (http://localhost:3001/_next/static/chunks/main.js:820:1)
+    at options.factory (http://localhost:3001/_next/static/chunks/webpack.js:715:31)
+    at __webpack_require__ (http://localhost:3001/_next/static/chunks/webpack.js:37:33)
+    at __webpack_exec__ (http://localhost:3001/_next/static/chunks/main.js:1975:61)
+    at  (http://localhost:3001/_next/static/chunks/main.js:1976:53)
+    at webpackJsonpCallback (http://localhost:3001/_next/static/chunks/webpack.js:1387:46)
+    at  (http://localhost:3001/_next/static/chunks/main.js:9:61)
+[    9214ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3001/_next/webpack-hmr." {file: "http://localhost:3001/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3001/_next/static/chunks/main.js line 710 > eval:64
+[   10224ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3001/_next/webpack-hmr." {file: "http://localhost:3001/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3001/_next/static/chunks/main.js line 710 > eval:64
+[   11228ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3001/_next/webpack-hmr." {file: "http://localhost:3001/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3001/_next/static/chunks/main.js line 710 > eval:64
+[   12555ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3001/_next/webpack-hmr." {file: "http://localhost:3001/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3001/_next/static/chunks/main.js line 710 > eval:64
+[   17566ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:349
+[   27131ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:347
+[   30173ms] SyntaxError: "" literal not terminated before end of script
+

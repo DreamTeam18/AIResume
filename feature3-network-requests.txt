@@ -1,0 +1,23 @@
+[GET] http://localhost:3000/ => [404] Not Found
+[GET] http://localhost:3000/ => [404] Not Found
+[GET] http://localhost:3000/ => [404] Not Found
+[GET] http://localhost:3000/ => [404] Not Found
+[GET] http://localhost:3000/ => [404] Not Found
+[GET] http://localhost:3000/ => [404] Not Found
+[GET] http://localhost:3000/ => [404] Not Found
+[GET] http://localhost:3000/ => [404] Not Found
+[GET] http://localhost:3000/ => [404] Not Found
+[GET] http://localhost:3000/ => [404] Not Found
+[GET] http://localhost:3000/ => [404] Not Found
+[GET] http://localhost:3000/ => [404] Not Found
+[GET] http://localhost:3000/ => [200] OK
+[GET] http://localhost:3000/ => [200] OK
+[GET] http://localhost:3000/_next/static/css/app/layout.css?v=1770454831983 => [500] Internal Server Error
+[GET] http://localhost:3000/_next/static/chunks/webpack.js?v=1770454831983 => [500] Internal Server Error
+[GET] http://localhost:3000/_next/static/chunks/main-app.js?v=1770454831983 => [500] Internal Server Error
+[GET] http://localhost:3000/_next/static/chunks/app-pages-internals.js => [500] Internal Server Error
+[GET] http://localhost:3000/_next/static/chunks/app/page.js => [500] Internal Server Error
+[GET] http://localhost:3000/_next/static/chunks/app/layout.js => [500] Internal Server Error
+[GET] http://localhost:3000/_next/image?url=%2Fimages%2Fmemoji.png&w=384&q=75 => [200] OK
+[GET] http://localhost:3000/_next/image?url=%2Fimages%2Fprojects%2Flaughgpt.jpg&w=640&q=75 => [400] Bad Request
+[GET] http://localhost:3000/_next/image?url=%2Fimages%2Fprojects%2Fairbnb.jpg&w=640&q=75 => [400] Bad Request
