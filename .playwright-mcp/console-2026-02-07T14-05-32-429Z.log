@@ -1,0 +1,2 @@
+[    1774ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3002/_next/static/chunks/main-app.js?v=1770473134019”." {file: "http://localhost:3002/" line: 1}] @ http://localhost:3002/:1
+[    1779ms] [WARNING] [JavaScript Warning: "Loading failed for the <script> with source “http://localhost:3002/_next/static/chunks/app-pages-internals.js”." {file: "http://localhost:3002/" line: 1}] @ http://localhost:3002/:1

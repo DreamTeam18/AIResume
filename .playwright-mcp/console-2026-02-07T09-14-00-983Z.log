@@ -1,0 +1,36 @@
+[   13005ms] Error: Cannot find module './vendor-chunks/next.js'
+Require stack:
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/.next/server/webpack-runtime.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/.next/server/app/_not-found/page.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/require.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/load-components.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/build/utils.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/lib/router-server.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/lib/start-server.js
+    at getServerError (webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/nodeStackFrames.js:38:15)
+    at hydrate/< (webpack-internal:///./node_modules/next/dist/client/index.js:625:27)
+    at setTimeout handler*hydrate (webpack-internal:///./node_modules/next/dist/client/index.js:613:27)
+    at async*pageBootrap (webpack-internal:///./node_modules/next/dist/client/page-bootstrap.js:27:26)
+    at  (webpack-internal:///./node_modules/next/dist/client/next-dev.js:25:43)
+    at promise callback* (webpack-internal:///./node_modules/next/dist/client/next-dev.js:23:4)
+    at ./node_modules/next/dist/client/next-dev.js (http://localhost:3000/_next/static/chunks/main.js:820:1)
+    at options.factory (http://localhost:3000/_next/static/chunks/webpack.js:715:31)
+    at __webpack_require__ (http://localhost:3000/_next/static/chunks/webpack.js:37:33)
+    at __webpack_exec__ (http://localhost:3000/_next/static/chunks/main.js:1975:61)
+    at  (http://localhost:3000/_next/static/chunks/main.js:1976:53)
+    at webpackJsonpCallback (http://localhost:3000/_next/static/chunks/webpack.js:1387:46)
+    at  (http://localhost:3000/_next/static/chunks/main.js:9:61)
+[   23613ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3000/_next/webpack-hmr." {file: "http://localhost:3000/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3000/_next/static/chunks/main.js line 710 > eval:64
+[   24624ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3000/_next/webpack-hmr." {file: "http://localhost:3000/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3000/_next/static/chunks/main.js line 710 > eval:64
+[   25751ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3000/_next/webpack-hmr." {file: "http://localhost:3000/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3000/_next/static/chunks/main.js line 710 > eval:64
+[   26932ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3000/_next/webpack-hmr." {file: "http://localhost:3000/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3000/_next/static/chunks/main.js line 710 > eval:64
+[   28706ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3000/_next/webpack-hmr." {file: "http://localhost:3000/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3000/_next/static/chunks/main.js line 710 > eval:64
+[   33721ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3000/_next/webpack-hmr." {file: "http://localhost:3000/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3000/_next/static/chunks/main.js line 710 > eval:64
+[   38726ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3000/_next/webpack-hmr." {file: "http://localhost:3000/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3000/_next/static/chunks/main.js line 710 > eval:64
+[   44689ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3000/_next/webpack-hmr." {file: "http://localhost:3000/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3000/_next/static/chunks/main.js line 710 > eval:64
+[   58005ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:349
+[   80707ms] [WARNING] [JavaScript Warning: "“localhost” has been classified as a bounce tracker. If it does not receive user activation within the next 3,600 seconds it will have its state purged."] @ :0
+[   80884ms] [WARNING] [JavaScript Warning: "The resource at “http://localhost:3000/_next/static/chunks/webpack.js?v=1770455711317” preloaded with link preload was not used within a few seconds. Make sure all attributes of the preload tag are set correctly." {file: "http://localhost:3000/" line: 0}] @ http://localhost:3000/:0

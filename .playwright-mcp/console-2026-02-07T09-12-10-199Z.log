@@ -1,0 +1,30 @@
+[   17165ms] Error: Cannot find module '/Users/dreamteam18/Desktop/Projects/Claude/AIResume/.next/server/middleware-manifest.json'
+Require stack:
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/next-server.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/dev/next-dev-server.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/next.js
+- /Users/dreamteam18/Desktop/Projects/Claude/AIResume/node_modules/next/dist/server/lib/start-server.js
+    at getServerError (webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/internal/helpers/nodeStackFrames.js:38:15)
+    at hydrate/< (webpack-internal:///./node_modules/next/dist/client/index.js:625:27)
+    at setTimeout handler*hydrate (webpack-internal:///./node_modules/next/dist/client/index.js:613:27)
+    at async*pageBootrap (webpack-internal:///./node_modules/next/dist/client/page-bootstrap.js:27:26)
+    at  (webpack-internal:///./node_modules/next/dist/client/next-dev.js:25:43)
+    at promise callback* (webpack-internal:///./node_modules/next/dist/client/next-dev.js:23:4)
+    at ./node_modules/next/dist/client/next-dev.js (http://localhost:3006/_next/static/chunks/main.js:820:1)
+    at options.factory (http://localhost:3006/_next/static/chunks/webpack.js:715:31)
+    at __webpack_require__ (http://localhost:3006/_next/static/chunks/webpack.js:37:33)
+    at __webpack_exec__ (http://localhost:3006/_next/static/chunks/main.js:1975:61)
+    at  (http://localhost:3006/_next/static/chunks/main.js:1976:53)
+    at webpackJsonpCallback (http://localhost:3006/_next/static/chunks/webpack.js:1387:46)
+    at  (http://localhost:3006/_next/static/chunks/main.js:9:61)
+[  104464ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3006/_next/webpack-hmr." {file: "http://localhost:3006/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3006/_next/static/chunks/main.js line 710 > eval:64
+[  105472ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3006/_next/webpack-hmr." {file: "http://localhost:3006/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3006/_next/static/chunks/main.js line 710 > eval:64
+[  106512ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3006/_next/webpack-hmr." {file: "http://localhost:3006/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3006/_next/static/chunks/main.js line 710 > eval:64
+[  107530ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3006/_next/webpack-hmr." {file: "http://localhost:3006/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3006/_next/static/chunks/main.js line 710 > eval:64
+[  109019ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3006/_next/webpack-hmr." {file: "http://localhost:3006/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3006/_next/static/chunks/main.js line 710 > eval:64
+[  114033ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3006/_next/webpack-hmr." {file: "http://localhost:3006/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3006/_next/static/chunks/main.js line 710 > eval:64
+[  119040ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3006/_next/webpack-hmr." {file: "http://localhost:3006/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3006/_next/static/chunks/main.js line 710 > eval:64
+[  124062ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3006/_next/webpack-hmr." {file: "http://localhost:3006/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3006/_next/static/chunks/main.js line 710 > eval:64
+[  131591ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3006/_next/webpack-hmr." {file: "http://localhost:3006/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3006/_next/static/chunks/main.js line 710 > eval:64
+[  142877ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3006/_next/webpack-hmr." {file: "http://localhost:3006/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3006/_next/static/chunks/main.js line 710 > eval:64
+[  159807ms] [ERROR] [JavaScript Error: "Firefox can’t establish a connection to the server at ws://localhost:3006/_next/webpack-hmr." {file: "http://localhost:3006/_next/static/chunks/main.js line 710 > eval" line: 64}] @ http://localhost:3006/_next/static/chunks/main.js line 710 > eval:64

@@ -1,0 +1,14 @@
+[   11417ms] [WARNING] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. @ webpack-internal:///(app-pages-browser)/./node_modules/framer-motion/dist/es/utils/warn-once.mjs:8
+[   57917ms] [ERROR] [JavaScript Error: "The connection to ws://localhost:3005/_next/webpack-hmr was interrupted while the page was loading." {file: "http://localhost:3005/_next/static/chunks/main-app.js?v=1770472882729 line 1002 > eval" line: 42}] @ http://localhost:3005/_next/static/chunks/main-app.js?v=1770472882729 line 1002 > eval:42
+[   57929ms] [ERROR] Failed to fetch RSC payload for http://localhost:3005/. Falling back to browser navigation. Error @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[   57930ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:112
+[   57948ms] [ERROR] Failed to fetch RSC payload for http://localhost:3005/. Falling back to browser navigation. Error @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[   57966ms] [ERROR] Failed to fetch RSC payload for http://localhost:3005/. Falling back to browser navigation. Error @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[   57970ms] [WARNING] [JavaScript Warning: "“localhost” has been classified as a bounce tracker. If it does not receive user activation within the next 3,600 seconds it will have its state purged."] @ :0
