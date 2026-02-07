@@ -1,9 +1,44 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { profileConfig } from '@/config/profile';
 import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
+  const [activeSection, setActiveSection] = useState<string>('me');
+
+  // Track which section is currently visible
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px', // Trigger when section is in middle third of viewport
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all sections
+    const sections = ['me', 'projects', 'skills', 'contact'];
+    sections.forEach((sectionId) => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   // Smooth scroll handler for navigation links
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
@@ -36,28 +71,44 @@ export default function Header() {
             <a
               href="#me"
               onClick={(e) => handleSmoothScroll(e, 'me')}
-              className="text-foreground/70 hover:text-foreground transition-colors duration-200 text-sm font-medium"
+              className={`transition-colors duration-200 text-sm font-medium ${
+                activeSection === 'me'
+                  ? 'text-blue-600 dark:text-blue-400 font-semibold'
+                  : 'text-foreground/70 hover:text-foreground'
+              }`}
             >
               Me
             </a>
             <a
               href="#projects"
               onClick={(e) => handleSmoothScroll(e, 'projects')}
-              className="text-foreground/70 hover:text-foreground transition-colors duration-200 text-sm font-medium"
+              className={`transition-colors duration-200 text-sm font-medium ${
+                activeSection === 'projects'
+                  ? 'text-blue-600 dark:text-blue-400 font-semibold'
+                  : 'text-foreground/70 hover:text-foreground'
+              }`}
             >
               Projects
             </a>
             <a
               href="#skills"
               onClick={(e) => handleSmoothScroll(e, 'skills')}
-              className="text-foreground/70 hover:text-foreground transition-colors duration-200 text-sm font-medium"
+              className={`transition-colors duration-200 text-sm font-medium ${
+                activeSection === 'skills'
+                  ? 'text-blue-600 dark:text-blue-400 font-semibold'
+                  : 'text-foreground/70 hover:text-foreground'
+              }`}
             >
               Skills
             </a>
             <a
               href="#contact"
               onClick={(e) => handleSmoothScroll(e, 'contact')}
-              className="text-foreground/70 hover:text-foreground transition-colors duration-200 text-sm font-medium"
+              className={`transition-colors duration-200 text-sm font-medium ${
+                activeSection === 'contact'
+                  ? 'text-blue-600 dark:text-blue-400 font-semibold'
+                  : 'text-foreground/70 hover:text-foreground'
+              }`}
             >
               Contact
             </a>
