@@ -1,0 +1,9 @@
+{
+  "hooks": {
+    "save-session-context": {
+      "command": "./.git/hooks/save-session-context",
+      "description": "Save session context to memory when /new is issued",
+      "trigger": "/new"
+    }
+  }
+}

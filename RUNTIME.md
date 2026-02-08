@@ -1,0 +1,3 @@
+# Runtime
+Runtime: agent=main | host=Dream's Mac mini | repo=/Users/dreamteam18/.openclaw/workspace | os=Darwin 24.6.0 (x64) | node=v22.22.0 | model=openrouter/arcee-ai/trinity-large-preview:free | default_model=openrouter/arcee-ai/trinity-large-preview:free | channel=webchat | capabilities=none | thinking=off
+Reasoning: off (hidden unless on/stream). Toggle /reasoning; /status shows Reasoning when enabled.
